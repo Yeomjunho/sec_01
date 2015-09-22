@@ -1,1 +1,46 @@
-//edit.ejs
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>edit.ejs</title>
+<link rel="stylesheet" type="text/css" href="http://junwd.cafe24.com/_jun/pofol/com/css/reset.css">
+<script language="javascript" type="text/javascript" src="http://junwd.cafe24.com/_jun/pofol/com/js/jquery-1.7.2.js"></script>
+<style>
+h1{display:block;font-size:20px;padding:10px}
+a{color:blue}
+</style>
+
+<script>
+$(function(){
+	$('#inp_ra_<%= data.sex %>').attr('checked', true);
+});
+</script>
+</head>
+<body>
+
+<h1>edit page /  <a href="/" class="btn_list">list</a></h1>
+
+<form method="post">
+	<dl class="edit_d">
+		<dt>id:</dt>
+		<dd><input type="text" name="id" value="<%= data.id %>" disabled /></dd>
+		<dt>name:</dt>
+		<dd><input type="text" name="name" value="<%= data.name %>" /></dd>
+		<dt>age:</dt>
+		<dd><input type="number" name="age" value="<%= data.age %>" /></dd>
+		<dt>phone:</dt>
+		<dd><input type="number" name="phone" value="<%= data.phone %>" /></dd>
+		<dt>address:</dt>
+		<dd><input type="text" name="adrs" value="<%= data.adrs %>" /></dd>
+		<dt>sex:</dt>
+		<dd>
+			<label for="inp_ra_m"><input type="radio" name="sex" value="m" id="inp_ra_m" />m</label>
+			<label for="inp_ra_w"><input type="radio" name="sex" value="w" id="inp_ra_w" />w</label>
+		</dd>
+	</dl>
+
+	<input type="submit" value="수정" />
+</form>
+
+</body>
+</html>

@@ -3,13 +3,18 @@
 <head>
 <meta charset="utf-8">
 <title>list.ejs</title>
-	
+<link rel="stylesheet" type="text/css" href="http://junwd.cafe24.com/_jun/pofol/com/css/reset.css">
+<style>
+h1{display:block;font-size:20px;padding:10px}
+.list_d{border-top:2px solid #333;margin-top:10px}
+.list_d li{border-bottom:1px solid #f1f1f1;padding:10px;list-style: none}
+.list_d li p{display:block}
+a{color:blue}
+</style>
 </head>
 <body>
 
-<h1>list page</h1>
-<a href="/insert" class="btn_insert">insert data</a>
-<hr/>
+<h1>list page /  <a href="/insert" class="btn_insert">insert data</a></h1>
 
 <div class="list_d">
 	<ol>
@@ -18,13 +23,16 @@
 			if(item.sex != 'm') sex = '여';
 		%>
 		<li>
+			[<%= idx %>]<br/>
 			<a href="/delete/<%= item.id %>">Delete</a>
 			<a href="/edit/<%= item.id %>">Edit</a>
-			<span><%= item.id %> (<%= sex %>)</span>
-			<strong><%= item.name %></strong>
-			<span><%= item.age %></span>
-			<a href="tel:<%= item.phone %>"><%= item.phone %></a>
-			<address><%= item.adrs %></address>
+			<p>
+			<span><em>id:</em> <%= item.id %></span>
+			<strong><em>name:</em> <%= item.name %> (<%= sex %>)</strong>
+			<span><em>age:</em> <%= item.age %></span>
+			</p>
+			<a href="tel:<%= item.phone %>"><em>phone:</em> <%= item.phone %></a>
+			<address><em>adrs:</em> <%= item.adrs %></address>
 		</li>
 		<% }) %>
 	</ol>

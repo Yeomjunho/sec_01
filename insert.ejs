@@ -1,1 +1,35 @@
-//insert.ejs
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>insert.ejs</title>
+<link rel="stylesheet" type="text/css" href="http://junwd.cafe24.com/_jun/pofol/com/css/reset.css">
+<style>
+h1{display:block;font-size:20px;padding:10px}
+a{color:blue}
+</style>
+</head>
+<body>
+
+<h1>insert page</h1>
+<form method="post">
+		<dl class="insert_d">
+			<dt>name:</dt>
+			<dd><input type="text" name="name" /></dd>
+			<dt>age:</dt>
+			<dd><input type="number" name="age" /></dd>
+			<dt>phone:</dt>
+			<dd><input type="number" name="phone" /></dd>
+			<dt>address:</dt>
+			<dd><input type="text" name="adrs" /></dd>
+			<dt>sex:</dt>
+			<dd>
+				<label for="inp_ra_m"><input type="radio" name="sex" value="m" id="inp_ra_m" />m</label>
+				<label for="inp_ra_w"><input type="radio" name="sex" value="w" id="inp_ra_w" />w</label>
+			</dd>
+		</dl>
+		<input type="submit" value="db추가" />
+
+</form>
+</body>
+</html>
